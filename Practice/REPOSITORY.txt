@@ -1,0 +1,84 @@
+Here are the most common and important escape characters in Python:
+
+\n (Newline): Inserts a line break. The text after \n will appear on the next line.
+print("Hello\nWorld")
+# Output:
+# Hello
+# World
+
+
+\t (Tab): Inserts a horizontal tab space.
+print("Name:\tJohn")
+# Output:
+# Name:	John
+
+
+\\ (Backslash): Inserts a literal backslash. Since the backslash is used for escaping, you need to escape the backslash itself if you want to include it in your string.
+print("C:\\Users\\Documents")
+# Output:
+# C:\Users\Documents
+
+
+\' (Single Quote): Inserts a literal single quote within a string that is defined using single quotes.
+print('It\'s a beautiful day.')
+# Output:
+# It's a beautiful day.
+Note: You don't need to escape a single quote if your string is defined with double quotes (e.g., "It's a beautiful day."), and vice-versa.
+
+
+\" (Double Quote): Inserts a literal double quote within a string that is defined using double quotes.
+print("He said, \"Hello!\"")
+# Output:
+# He said, "Hello!"
+
+
+\r (Carriage Return): Moves the cursor to the beginning of the current line without advancing to the next line. Any subsequent text will overwrite the existing text on that line.
+print("Hello\rWorld")
+# Output:
+# World (because "World" overwrites "Hello")
+
+
+\b (Backspace): Moves the cursor one position backward, effectively deleting the character before it.
+print("Hello\b World")
+# Output:
+# Hell World (the 'o' from "Hello" is "backspaced")
+
+
+\f (Form Feed): Moves the cursor to the start of the next page. This is rarely used in modern text output but can be relevant for printing to some physical printers.
+
+
+\ooo (Octal Value): Represents a character by its octal value (up to 3 digits).
+print("\110\145\154\154\157") # Octal for "Hello"
+# Output:
+# Hello
+
+
+\xhh (Hexadecimal Value): Represents a character by its two-digit hexadecimal value.
+print("\x48\x65\x6c\x6c\x6f") # Hex for "Hello"
+# Output:
+# Hello
+
+
+\Uhhhhhhhh (Unicode character - 8 hex digits): Represents a Unicode character using its 8-digit hexadecimal code point.
+print("\U0001F600") # Grinning face emoji
+# Output:
+# 😀
+
+
+\uhhhh (Unicode character - 4 hex digits): Represents a Unicode character using its 4-digit hexadecimal code point (for characters in the Basic Multilingual Plane).
+print("\u00A9") # Copyright symbol
+# Output:
+# ©
+
+
+Raw Strings (r or R prefix):
+Sometimes, you want to treat backslashes as literal characters and not as escape sequence initiators. This is especially common when dealing with file paths on Windows or regular expressions. You can create a raw string by prefixing the string literal with r or R.
+# Without raw string, \n would be a newline
+print("C:\new\text.txt")
+# Output:
+# C:
+# ew	ext.txt
+# With raw string, \n is treated literally
+print(r"C:\new\text.txt")
+# Output:
+# C:\new\text.txt
