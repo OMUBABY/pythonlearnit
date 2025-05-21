@@ -6,6 +6,17 @@ print("Hello\nWorld")
 # Hello
 # World
 
+note: ("""----
+----
+----""")
+this can be used for multi line printing. e.g.
+print("""This is Line 1.
+This is Line 2.
+This is Line 3.""")
+# Output:
+#This is Line 2
+#This is Line 3
+
 
 \t (Tab): Inserts a horizontal tab space.
 print("Name:\tJohn")
